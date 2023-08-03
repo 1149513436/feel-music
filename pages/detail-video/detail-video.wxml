@@ -1,8 +1,0 @@
-<!-- MV详情页 -->
-<view>
-	<video class="video-class" src="{{url}}"  danmu-list="{{danmuList}}">
-</video>
-	<view>
-	</view>
-</view>
-

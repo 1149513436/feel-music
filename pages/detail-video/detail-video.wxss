@@ -1,4 +1,0 @@
-/* pages/detail-video/detail-videp.wxss */
-.video-class{
-	width: 100%;
-}
