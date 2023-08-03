@@ -396,3 +396,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+# 微信小程序
+project.config.json
+.miniprogram
+miniprogram_npm/
+node_modules/
