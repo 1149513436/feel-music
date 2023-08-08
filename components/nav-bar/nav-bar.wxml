@@ -6,7 +6,7 @@
       <view class="slot">
         <slot name="left"></slot>
       </view>
-      <view class="default">
+      <view class="default" bind:tap="navBack">
         <image class="icon" src="/asset/images/icons/arrow-left.png"></image>
       </view>
     </view>

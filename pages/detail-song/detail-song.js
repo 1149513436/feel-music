@@ -2,7 +2,7 @@
 import recommendStore from "../../store/recommendStore"
 import rankingStore from "../../store/rankingStore"
 import { getPlayListDetail } from "../../service/music"
-
+import playerStore from "../../store/playerStore"
 Page({
   data: {
     type: "ranking",
@@ -50,6 +50,10 @@ Page({
       title: value.name,
     })
   },
+	onSongItemTap(){
+		playerStore.setState("playSongList", this.data.songInfo.tracks)
+	},
+	// ================== store共享数据 ==================
 
   onUnload() {
     if (this.data.type === "ranking") {

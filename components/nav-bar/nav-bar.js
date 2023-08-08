@@ -18,5 +18,11 @@ Component({
     attached() {
       this.setData({ statusHeight: app.globalData.statusHeight })
     }
-  }
+	},
+	methods:{
+		navBack(){
+			wx.navigateBack()
+		
+		}
+	}
 })

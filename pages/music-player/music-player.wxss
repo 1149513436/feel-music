@@ -108,7 +108,12 @@
   text-align: center;
   height: 100%;
 }
-
+.lyric-list ::-webkit-scrollbar{
+	display: none;
+}
+.active {
+  color: #fff;
+}
 .lyric-list .item {
   height: 35px;
   line-height: 35px;

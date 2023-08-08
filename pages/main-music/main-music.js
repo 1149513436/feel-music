@@ -3,6 +3,7 @@ import querySelect from "../../utils/query-select"
 import throttle from "../../utils/throttle"
 import recommendStore from '../../store/recommendStore'
 import rankingStore from '../../store/rankingStore'
+import playerStore from "../../store/playerStore"
 const querySelectThrottle=throttle(querySelect)
 
 Page({
@@ -42,6 +43,8 @@ onUnload(){
 	rankingStore.offState("newRanking", this.handleNewRanking)
 	rankingStore.offState("originRanking", this.handleOriginRanking)
 	rankingStore.offState("upRanking", this.handleUpRanking)
+
+	playerStore.offStates(["currentSong", "isPlaying"], this.handlePlayInfos)
 },
 handleRecomendSongs(value){
 	if(value.tracks){
@@ -111,5 +114,10 @@ async fetchSongMenuList() {//小细节，在这里没有使用await，因为使�
 			const newRankingInfos = { ...this.data.rankingInfos, [ranking]: value }
 			this.setData({ rankingInfos: newRankingInfos })
 		}
-	}
+	},
+	onSongItemTap(event) {
+    const index = event.currentTarget.dataset.index
+    playerStore.setState("playSongList", this.data.recommendSongs)
+    playerStore.setState("playSongIndex", index)
+  },
 })
